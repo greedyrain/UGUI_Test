@@ -3,14 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public abstract class BasePanel<T> : MonoBehaviour where T:class
+public abstract class BasePanel : MonoBehaviour
 {
-    private static T instance;
-    public static T Instance
-    {
-        get { return instance; }
-    }
-
     private CanvasGroup canvasGroup;
     private float alphaSpeed = 10;
     private bool isShow;
@@ -19,7 +13,6 @@ public abstract class BasePanel<T> : MonoBehaviour where T:class
 
     protected virtual void Awake()
     {
-        instance = this as T;
         canvasGroup = GetComponent<CanvasGroup>();
         if (canvasGroup == null)
         {
@@ -36,7 +29,7 @@ public abstract class BasePanel<T> : MonoBehaviour where T:class
 
     void Update()
     {
-        if (isShow && canvasGroup.alpha < 1)
+        if (isShow && canvasGroup.alpha != 1)
         {
             canvasGroup.alpha += alphaSpeed * Time.deltaTime;
             if (canvasGroup.alpha >= 1)
