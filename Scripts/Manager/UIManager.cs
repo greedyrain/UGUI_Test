@@ -15,6 +15,7 @@ public class UIManager
     private UIManager()
     {
         canvas = GameObject.Find("Canvas").transform;
+        GameObject.DontDestroyOnLoad(canvas.gameObject);
     }
 
     //得到面板
