@@ -41,7 +41,7 @@ public abstract class BasePanel : MonoBehaviour
             if (canvasGroup.alpha <= 0)
             {
                 canvasGroup.alpha = 0;
-                hideCallBack?.Invoke();
+                hideCallBack?.Invoke();//面板淡出后会执行一个方法；
             }
         }
     }
