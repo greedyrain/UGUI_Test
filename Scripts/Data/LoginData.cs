@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class LoginData
 {
-    string userName, password;
+    public string userName, password;
+    public bool rememberPW, autoLogin;
 }
 
 public class LoginDataBase

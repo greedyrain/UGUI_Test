@@ -7,7 +7,7 @@ public class Main : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        UIManager.Instance.ShowPanel<TipPanel>();
+        UIManager.Instance.ShowPanel<LoginPanel>();
     }
 
     // Update is called once per frame
