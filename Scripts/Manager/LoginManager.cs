@@ -14,6 +14,7 @@ public class LoginManager
     {
         loginData = JsonManager.Instance.LoadData<LoginData>("LoginData");
         loginDataBase = JsonManager.Instance.LoadData<LoginDataBase>("LoginDataBase");
+        serversList = JsonManager.Instance.LoadData<List<ServerData>>("ServersList");
     }
 
     private LoginData loginData;
@@ -26,6 +27,12 @@ public class LoginManager
     public LoginDataBase LoginDataBase
     {
         get { return loginDataBase; }
+    }
+
+    private List<ServerData> serversList;
+    public List<ServerData> ServersList
+    {
+        get { return serversList; }
     }
 
     public void SaveLoginData()

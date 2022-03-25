@@ -6,6 +6,8 @@ public class LoginData
 {
     public string userName, password;
     public bool rememberPW, autoLogin;
+
+    public int lastServerID = 0;
 }
 
 public class LoginDataBase

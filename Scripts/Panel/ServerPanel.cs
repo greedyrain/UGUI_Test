@@ -25,6 +25,12 @@ public class ServerPanel : BasePanel
         });
     }
 
+    public override void ShowMe()
+    {
+        base.ShowMe();
+        //显示时将当前选择的区号的文字改为选中的区名；
+    }
+
     public void ChangeServerName(string serverName)
     {
         this.serverName.text = serverName;
