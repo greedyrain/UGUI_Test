@@ -30,8 +30,13 @@ public class LoginPanel : BasePanel
             {
                 LoginManager.Instance.LoginData.rememberPW = toggleRememberPW.isOn;
                 LoginManager.Instance.LoginData.autoLogin = toggleAutoLogin.isOn;
+                LoginManager.Instance.LoginData.userName = userNameIF.text;
+                LoginManager.Instance.LoginData.password = passwordIF.text;
                 //打开服务器选择面板；
-                UIManager.Instance.ShowPanel<ServerPanel>();
+                if (LoginManager.Instance.LoginData.lastServerID == 0)
+                    UIManager.Instance.ShowPanel<ServerListPanel>();
+                else
+                    UIManager.Instance.ShowPanel<ServerPanel>();
                 UIManager.Instance.HidePanel<LoginPanel>();
             }
         });
@@ -78,6 +83,14 @@ public class LoginPanel : BasePanel
         if (toggleAutoLogin.isOn)
         {
             //验证账号密码相关；
+            if (LoginManager.Instance.CheckLogin(userNameIF.text, passwordIF.text))
+            {
+                if (LoginManager.Instance.LoginData.lastServerID == 0)
+                    UIManager.Instance.ShowPanel<ServerListPanel>();
+                else
+                    UIManager.Instance.ShowPanel<ServerPanel>();
+                UIManager.Instance.HidePanel<LoginPanel>();
+            }
         }
     }
 }

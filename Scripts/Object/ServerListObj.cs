@@ -8,7 +8,7 @@ using UnityEngine.U2D;
 public class ServerListObj : MonoBehaviour
 {
     public Button button;
-    public TMP_Text text;
+    public TMP_Text serverName;
     public Image imageNew;
     public Image status;
     public ServerData serverData;
@@ -18,8 +18,8 @@ public class ServerListObj : MonoBehaviour
     {
         button.onClick.AddListener(()=>
         {
-            LoginManager.Instance.LoginData.lastServerID = serverData.ID;
             //关闭选服面板
+            LoginManager.Instance.LoginData.lastServerID = serverData.ID;
             UIManager.Instance.HidePanel<ServerListPanel>();
             UIManager.Instance.ShowPanel<ServerPanel>();
         });
@@ -28,7 +28,7 @@ public class ServerListObj : MonoBehaviour
     public void InitInfo(ServerData data)
     {
         serverData = data;
-        text.text = data.serverName;
+        serverName.text = data.serverName;
         imageNew.gameObject.SetActive(data.isNew);
         status.gameObject.SetActive(true);
         SpriteAtlas atlas = Resources.Load<SpriteAtlas>("Atlas");

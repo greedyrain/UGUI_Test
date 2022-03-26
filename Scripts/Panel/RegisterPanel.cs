@@ -16,7 +16,8 @@ public class RegisterPanel : BasePanel
             if (LoginManager.Instance.RegisterUser(userNameIF.text,passwordIF.text))
             {
                 LoginManager.Instance.LoginData.userName = userNameIF.text;
-                LoginManager.Instance.LoginData.password = LoginManager.Instance.LoginData.rememberPW ? LoginManager.Instance.LoginData.password : "";
+                LoginManager.Instance.LoginData.password = LoginManager.Instance.LoginData.rememberPW ? passwordIF.text : "";
+                LoginManager.Instance.SaveLoginDataBase();
                 UIManager.Instance.ShowPanel<LoginPanel>();
                 UIManager.Instance.HidePanel<RegisterPanel>();
             }

@@ -299,6 +299,7 @@ GameObject:
   - component: {fileID: 6835437659162748002}
   - component: {fileID: 6835437659162748029}
   - component: {fileID: 6835437659162748028}
+  - component: {fileID: -3390860651447525709}
   m_Layer: 5
   m_Name: ServerListObj
   m_TagString: Untagged
@@ -411,3 +412,19 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &-3390860651447525709
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6835437659162748030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c88e4f7b1fe4f421bb6522a4b6b44919, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 6835437659162748028}
+  serverName: {fileID: 6835437658587610691}
+  imageNew: {fileID: 6835437658226587525}
+  status: {fileID: 6835437658545274851}
